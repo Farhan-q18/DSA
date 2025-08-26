@@ -11,16 +11,27 @@
  */
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        if (headA == null || headB == null) {
+            return null;
+        }
+
         ListNode a = headA;
         ListNode b = headB;
 
-        // Traverse both lists. When one pointer reaches the end, switch to the other list's head.
         while (a != b) {
-            a = (a == null) ? headB : a.next;
-            b = (b == null) ? headA : b.next;
+            if (a == null) {
+                a = headB;
+            } else {
+                a = a.next;
+            }
+
+            if (b == null) {
+                b = headA;
+            } else {
+                b = b.next;
+            }
         }
 
-        // Either they meet at the intersection or both become null (no intersection)
-        return a;
+        return a;  // This is either the intersection node or null
     }
 }
