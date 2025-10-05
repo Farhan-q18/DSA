@@ -21,7 +21,9 @@ class Solution {
     }
 
     private void inorderHelper(TreeNode node, List<Integer> result) {
-        if (node == null) return;
+        if (node == null){
+            return;
+        }
         inorderHelper(node.left, result);
         result.add(node.val);
         inorderHelper(node.right, result);
