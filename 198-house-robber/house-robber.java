@@ -1,0 +1,15 @@
+class Solution {
+    public int rob(int[] nums) {
+        int prev2 = 0;
+        int prev1 = 0;
+        for(int i=0;i<nums.length;i++){
+            int robit = prev2 + nums[i];
+            int skipit = prev1;
+            int curr = Math.max(robit,skipit);
+
+            prev2 = prev1;
+            prev1 = curr;
+        }
+        return prev1;
+    }
+}
