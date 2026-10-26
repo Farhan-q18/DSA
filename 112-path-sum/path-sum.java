@@ -21,8 +21,8 @@ class Solution {
         if(root.left == null && root.right == null){
             return targetSum == root.val;
         }
-        int remainingSum = targetSum - root.val;
-
-        return hasPathSum(root.left,remainingSum) || hasPathSum(root.right,remainingSum);
+        int remaining = targetSum - root.val;
+        
+        return hasPathSum(root.left,remaining) || hasPathSum(root.right,remaining);
     }
 }
