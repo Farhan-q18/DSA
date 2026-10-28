@@ -21,7 +21,7 @@ class Solution {
         return answer;
     }
     private void inorder(TreeNode root,int k){
-        if(root == null){
+        if(root == null || count >= k){
             return;
         }
         inorder(root.left,k);
